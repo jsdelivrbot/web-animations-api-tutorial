@@ -26,6 +26,10 @@
 
     animation = new scope.Animation(effect, document.timeline)
 
+    animation.onfinish = () => {
+      console.log(`the square is now ${color}`)
+    }
+
     animation.play()
   }
 
