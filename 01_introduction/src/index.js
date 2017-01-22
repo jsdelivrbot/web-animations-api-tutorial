@@ -1,32 +1,40 @@
 ((scope) => {
   const element = document.querySelector('.square')
 
-  const keyframes = [
-    {
-      backgroundColor: 'red'
-    },
-    {
-      backgroundColor: 'yellow'
-    }
-  ]
+  let currentColor = 'red'
+  let animation = null
 
   const timing = {
-    duration: 2000,
+    duration: 1000,
     fill: 'forwards',
     easing: 'ease-in-out'
   }
 
-  const effect = new scope.KeyframeEffect(element, keyframes, timing)
+  scope.changeColor = (color) => {
+    const keyframes = [
+      {
+        backgroundColor: currentColor
+      },
+      {
+        backgroundColor: color
+      }
+    ]
 
-  const animation = new scope.Animation(effect, document.timeline)
+    currentColor = color
 
-  scope.toYellow = () => {
+    const effect = new scope.KeyframeEffect(element, keyframes, timing)
+
+    animation = new scope.Animation(effect, document.timeline)
+
     animation.play()
   }
 
   const range = document.querySelector('#range')
 
   range.addEventListener('input', () => {
-    animation.currentTime = 2000 * range.value / 100
+    if (animation) {
+      animation.pause()
+      animation.currentTime = 1000 * range.value / 100
+    }
   }, false)
 })(window)
