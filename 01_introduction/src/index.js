@@ -20,7 +20,13 @@
 
   const animation = new scope.Animation(effect, document.timeline)
 
-  scope.play = () => {
+  scope.toYellow = () => {
     animation.play()
   }
+
+  const range = document.querySelector('#range')
+
+  range.addEventListener('input', () => {
+    animation.currentTime = 2000 * range.value / 100
+  }, false)
 })(window)
