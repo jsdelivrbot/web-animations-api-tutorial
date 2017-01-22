@@ -10,9 +10,6 @@
     "start": "webpack-dev-server",
     "build": "webpack"
   },
-  "dependencies": {
-    "web-animations-js": "^2.2.2"
-  },
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
