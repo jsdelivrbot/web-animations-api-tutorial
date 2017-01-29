@@ -18,8 +18,8 @@
     <button onclick="changeColor('yellow')">Yellow</button>
     <button onclick="changeColor('blue')">Blue</button>
     <button onclick="changeColor('red')">Red</button>
-    <button onclick="changeToCustomColor()">Custom</button>
-    <input id="custom" type="text" placeholder="Insert Custom Color here" />
+    <button onclick="changeColor(document.getElementById('custom').value)">Custom</button>
+    <input id="custom" type="color" placeholder="Insert Custom Color here" />
     <input id="range" type="range" value="0" min="0" max="100">
     <script src="https://rawgit.com/web-animations/web-animations-js/master/web-animations-next.min.js"></script>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
