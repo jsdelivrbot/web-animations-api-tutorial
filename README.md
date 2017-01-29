@@ -1,4 +1,4 @@
-# web-animation-api-tutorial
+# web-animations-api-tutorial
 Code for Web Animation API Tutorial
 
 ## Lessons
