@@ -33,6 +33,10 @@
     animation.play()
   }
 
+  scope.changeToCustomColor = () => {
+    scope.changeColor(`#${document.getElementById('custom').value}`)
+  }
+
   const range = document.querySelector('#range')
 
   range.addEventListener('input', () => {
