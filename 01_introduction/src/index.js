@@ -1,11 +1,13 @@
 ((scope) => {
   const element = document.querySelector('.square')
 
+  const ANIMATION_DURATION = 2000
+
   let currentColor = 'red'
   let animation = null
 
   const timing = {
-    duration: 1000,
+    duration: ANIMATION_DURATION,
     fill: 'forwards',
     easing: 'ease-in-out'
   }
@@ -38,7 +40,7 @@
   range.addEventListener('input', () => {
     if (animation) {
       animation.pause()
-      animation.currentTime = 1000 * range.value / 100
+      animation.currentTime = ANIMATION_DURATION * range.value / 100
     }
   }, false)
 })(window)
