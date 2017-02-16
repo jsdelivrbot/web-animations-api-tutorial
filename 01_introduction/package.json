@@ -20,7 +20,8 @@
   },
   "standard": {
     "globals": [
-    "KeyframeEffect",
-    "Animation"]
-    }
+      "KeyframeEffect",
+      "Animation"
+    ]
+  }
 }
