@@ -5,8 +5,8 @@ export default (topLeft, topRight, bottomLeft, bottomRight, duration) => {
       left: 0
     },
     {
-      top: window.getComputedStyle(topLeft).bottom,
-      left: window.getComputedStyle(topLeft).right
+      top: window.getComputedStyle(bottomRight).top,
+      left: window.getComputedStyle(bottomRight).left
     },
     {
       top: 0,
@@ -20,8 +20,8 @@ export default (topLeft, topRight, bottomLeft, bottomRight, duration) => {
       right: 0
     },
     {
-      top: window.getComputedStyle(topRight).bottom,
-      right: window.getComputedStyle(topRight).left
+      top: window.getComputedStyle(bottomLeft).top,
+      right: window.getComputedStyle(bottomLeft).right
     },
     {
       top: 0,
@@ -35,8 +35,8 @@ export default (topLeft, topRight, bottomLeft, bottomRight, duration) => {
       left: 0
     },
     {
-      bottom: window.getComputedStyle(bottomLeft).top,
-      left: window.getComputedStyle(bottomLeft).right
+      bottom: window.getComputedStyle(topRight).bottom,
+      left: window.getComputedStyle(topRight).left
     },
     {
       bottom: 0,
@@ -50,8 +50,8 @@ export default (topLeft, topRight, bottomLeft, bottomRight, duration) => {
       right: 0
     },
     {
-      bottom: window.getComputedStyle(bottomRight).top,
-      right: window.getComputedStyle(bottomRight).left
+      bottom: window.getComputedStyle(topLeft).bottom,
+      right: window.getComputedStyle(topLeft).right
     },
     {
       bottom: 0,

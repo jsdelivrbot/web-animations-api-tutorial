@@ -14,7 +14,6 @@
             top: 0;
             left: 0;
             background-color: red;
-            z-index: 100;
         }
         
         .top-right {
@@ -44,6 +43,17 @@
     <div class="square bottom-right"></div>
     <div style="text-align: center">
         <button onclick="group()">Group</button>
+        <button onclick="sequence()">Sequence</button>
+        <button onclick="mix()">Mix</button>
+    </div>
+    <div style="text-align: center">
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="faster()">Faster</button>
+        <button onclick="slower()">Slower</button>
+    </div>
+    <div style="text-align: center">
+        <input id="range" type="range" value="0" min="0" max="4000">
     </div>
     <script src="https://rawgit.com/web-animations/web-animations-js/master/web-animations-next.min.js"></script>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
