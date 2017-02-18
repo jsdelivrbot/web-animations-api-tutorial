@@ -1,4 +1,4 @@
-# Web Animations Api Tutorial - Introduction
+# Web Animations Api Tutorial - Groups and Sequences
 
 ## Setup
 
