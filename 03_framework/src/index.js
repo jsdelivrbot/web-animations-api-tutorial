@@ -1,8 +1,10 @@
 import snackbarFactory from './snackbar'
 import progressBarFactory from './progressBar'
+import tabsFactory from './tabs'
 
 const snackbar = snackbarFactory(document.querySelector('.snackbar'))
 const progressBar = progressBarFactory(document.querySelector('.progress-bar'))
+const tabs = tabsFactory(document.querySelector('.tabs'))
 
 const messageInput = document.getElementById('message')
 const progressInput = document.getElementById('progress')

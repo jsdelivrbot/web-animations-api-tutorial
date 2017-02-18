@@ -15,6 +15,7 @@ body {
     left: 50%;
     bottom: -30px;
 }
+
 .progress-bar-container {
     width: 100%;
     background-color: grey;
@@ -23,4 +24,44 @@ body {
     width: 0%;
     height: 30px;
     background-color: green;
+}
+
+div.tabs {
+    position: relative;
+    width: 100%;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    height: 50px;
+}
+
+div.tab a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+div.tab a:focus, .active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    opacity: 0;
+    padding: 6px 12px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
 }
