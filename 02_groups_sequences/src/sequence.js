@@ -60,9 +60,9 @@ export default (topLeft, topRight, bottomLeft, bottomRight, duration) => {
     new KeyframeEffect(topLeft, [...topLeftKeyframesForward].reverse(), timing)
   ]
 
-  const group = new SequenceEffect(effects)
+  const sequence = new SequenceEffect(effects)
 
-  const animation = new Animation(group, document.timeline)
+  const animation = new Animation(sequence, document.timeline)
 
   return animation
 }
