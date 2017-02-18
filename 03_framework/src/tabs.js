@@ -1,35 +1,21 @@
+import {getShowKeyframes} from './tabsKeyframes'
+
 export default element => {
   const links = element.querySelectorAll('.tablinks')
   const tabContents = element.querySelectorAll('.tabcontent')
 
-  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 250
+  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 500
   const startIndex = element.dataset.startIndex ? parseInt(element.dataset.startIndex) : 0
 
   let activeIndex = -1
   const changeListners = []
+  let animationType = 'swipe-left'
 
   const timing = {
     duration: animationDuration,
     fill: 'forwards',
     easing: 'ease-in-out'
   }
-
-  const showKeyframes = [
-    {
-      opacity: 0,
-      left: '-100%'
-    },
-    {
-      opacity: 1,
-      left: '-100%'
-    },
-    {
-      opacity: 1,
-      left: '0%'
-    }
-  ]
-
-  const hideKeyframes = [...showKeyframes].reverse()
 
   const setActiveTab = indexToShow => {
     if (indexToShow !== activeIndex) {
@@ -48,8 +34,10 @@ export default element => {
   }
 
   const showTab = (indexToHide, indexToShow) => {
+    const showKeyframes = getShowKeyframes(animationType)
     const sequenceEffects = []
     if (indexToHide > -1) {
+      const hideKeyframes = [...showKeyframes].reverse()
       sequenceEffects.push(new KeyframeEffect(tabContents[indexToHide], hideKeyframes, timing))
     }
 
@@ -74,10 +62,15 @@ export default element => {
     changeListners.push(cb)
   }
 
+  const setAnimationType = type => {
+    animationType = type
+  }
+
   setActiveTab(startIndex)
 
   return {
     setActiveTab,
-    addChangeListener
+    addChangeListener,
+    setAnimationType
   }
 }

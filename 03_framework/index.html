@@ -10,7 +10,7 @@
     <h1>Snackbar</h1>
     <button type="button" onclick="show()">Show</button>
     <input type="text" id="message" placeholder="Insert a message..." />
-    <div class="snackbar" data-animation-duration="500" data-hide-timeout="2000"></div>
+    <div class="snackbar" data-animation-duration="500" data-hide-timeout="500"></div>
     <h1>Progress Bar</h1>
     <button type="button" onclick="setProgress()">Set Progress</button>
     <input type="number" min="0" max="100" id="progress" placeholder="Insert Progress value..." />
@@ -18,6 +18,13 @@
         <div class="progress-bar" data-animation-duration="1000"></div>
     </div>
     <h1>Tabs</h1>
+    <select id="tabs-animation-type">
+        <option value="swipe-left">Swipe Left</option>
+        <option value="swipe-right">Swipe Right</option>
+        <option value="zoom">Zoom</option>
+        <option value="flip">Flip</option>
+        <option value="rotate">Rotate</option>
+    </select>
     <div class="tabs">
         <div class="tab">
             <a class="tablinks">London</a>

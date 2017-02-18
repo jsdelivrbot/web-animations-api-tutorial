@@ -8,6 +8,11 @@ const tabs = tabsFactory(document.querySelector('.tabs'))
 
 const messageInput = document.getElementById('message')
 const progressInput = document.getElementById('progress')
+const tabsAnimationTypeInput = document.getElementById('tabs-animation-type')
+
+tabsAnimationTypeInput.addEventListener('change', event => {
+  tabs.setAnimationType(event.target.value)
+})
 
 snackbar.addHideListener(() => {
   console.log('snackbar closed')
