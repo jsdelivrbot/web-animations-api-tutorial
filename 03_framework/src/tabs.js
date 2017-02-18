@@ -2,7 +2,7 @@ export default element => {
   const links = element.querySelectorAll('.tablinks')
   const tabContents = element.querySelectorAll('.tabcontent')
 
-  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 150
+  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 250
   const startIndex = element.dataset.startIndex ? parseInt(element.dataset.startIndex) : 0
 
   let activeIndex = -1
@@ -16,10 +16,16 @@ export default element => {
 
   const showKeyframes = [
     {
-      opacity: 0
+      opacity: 0,
+      left: '-100%'
     },
     {
-      opacity: 1
+      opacity: 1,
+      left: '-100%'
+    },
+    {
+      opacity: 1,
+      left: '0%'
     }
   ]
 
@@ -60,8 +66,6 @@ export default element => {
     animation.play()
   }
 
-  setActiveTab(startIndex)
-
   links.forEach((link, index) => {
     link.addEventListener('click', () => setActiveTab(index))
   })
@@ -69,6 +73,8 @@ export default element => {
   const addChangeListener = cb => {
     changeListners.push(cb)
   }
+
+  setActiveTab(startIndex)
 
   return {
     setActiveTab,

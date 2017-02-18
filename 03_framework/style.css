@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .snackbar {
     opacity: 0;
@@ -59,9 +59,7 @@ div.tab a:focus, .active {
 
 .tabcontent {
     opacity: 0;
-    padding: 6px 12px;
     position: absolute;
     top: 50px;
-    left: 0;
     width: 100%;
 }
