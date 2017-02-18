@@ -2,10 +2,11 @@ export default element => {
   const links = element.querySelectorAll('.tablinks')
   const tabContents = element.querySelectorAll('.tabcontent')
 
-  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 500
+  const animationDuration = element.dataset.animationDuration ? parseInt(element.dataset.animationDuration) : 150
   const startIndex = element.dataset.startIndex ? parseInt(element.dataset.startIndex) : 0
 
   let activeIndex = -1
+  const changeListners = []
 
   const timing = {
     duration: animationDuration,
@@ -52,6 +53,10 @@ export default element => {
 
     const animation = new Animation(effect, document.timeline)
 
+    animation.onfinish = () => {
+      changeListners.forEach(cb => cb(indexToShow))
+    }
+
     animation.play()
   }
 
@@ -61,7 +66,12 @@ export default element => {
     link.addEventListener('click', () => setActiveTab(index))
   })
 
+  const addChangeListener = cb => {
+    changeListners.push(cb)
+  }
+
   return {
-    setActiveTab
+    setActiveTab,
+    addChangeListener
   }
 }

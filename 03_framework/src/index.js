@@ -13,6 +13,10 @@ snackbar.addHideListener(() => {
   console.log('snackbar closed')
 })
 
+tabs.addChangeListener(index => {
+  snackbar.show(`Tab ${index} is now visible`)
+})
+
 window.show = () => {
   snackbar.show(messageInput.value)
 }
