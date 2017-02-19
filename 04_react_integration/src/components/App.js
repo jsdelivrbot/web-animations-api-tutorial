@@ -14,12 +14,18 @@ export default class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      animationDuration: 250,
       progressValue: 0,
       messageValue: '',
       showSnackbar: false,
-      tabsAnimationType: 'swipe-left',
-      animationDuration: 250
+      tabsAnimationType: 'swipe-left'
     }
+  }
+
+  onChangeAnimationDuration (event) {
+    this.setState({
+      animationDuration: parseInt(event.target.value)
+    })
   }
 
   onChangeProgressValue (event) {
@@ -50,12 +56,6 @@ export default class App extends React.Component {
   onChangeTabsAnimationType (event) {
     this.setState({
       tabsAnimationType: event.target.value
-    })
-  }
-
-  onChangeAnimationDuration (event) {
-    this.setState({
-      animationDuration: parseInt(event.target.value)
     })
   }
 
