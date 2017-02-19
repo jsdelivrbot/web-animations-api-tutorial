@@ -10,7 +10,9 @@ const BAR_STYLE = {
   backgroundColor: 'green'
 }
 
-const animate = (element, from = 0, to, duration) => {
+const animate = (element, from, to, duration) => {
+  to = Math.min(to, 100)
+
   const timing = {
     duration: duration,
     fill: 'forwards',
@@ -44,7 +46,7 @@ export default class ProgressBar extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     const currentValue = this.props.value
-    const nextValue = Math.min(nextProps.value, 100)
+    const nextValue = !isNaN(nextProps.value) ? nextProps.value : 0
     if (currentValue !== nextValue) {
       animate(this.bar, currentValue, nextValue, this.props.animationDuration)
     }
@@ -60,10 +62,11 @@ export default class ProgressBar extends React.Component {
 }
 
 ProgressBar.propTypes = {
-  value: React.PropTypes.number.isRequired,
+  value: React.PropTypes.number,
   animationDuration: React.PropTypes.number
 }
 
 ProgressBar.defaultProps = {
+  value: 0,
   animationDuration: 500
 }
