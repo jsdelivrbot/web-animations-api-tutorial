@@ -45,7 +45,7 @@ export default class ProgressBar extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    const currentValue = this.props.value
+    const currentValue = !isNaN(this.props.value) ? this.props.value : 0
     const nextValue = !isNaN(nextProps.value) ? nextProps.value : 0
     if (currentValue !== nextValue) {
       animate(this.bar, currentValue, nextValue, this.props.animationDuration)
