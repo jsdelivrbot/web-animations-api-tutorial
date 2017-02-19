@@ -41,11 +41,11 @@ export default class Snackbar extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.show && !this.snackbarVisible) {
-      this.show(this.snackbar, this.props.animationDuration)
+      this.show()
     }
 
     if (!nextProps.show && this.snackbarVisible) {
-      this.hide(this.snackbar, this.props.animationDuration)
+      this.hide()
     }
   }
 

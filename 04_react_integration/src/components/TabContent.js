@@ -7,15 +7,27 @@ const TAB_CONTENT_STYLE = {
 }
 
 export default class TabContent extends React.Component {
-  render () {
-    const tabStyle = Object.assign({
-      opacity: this.props.active ? 1 : 0
+  constructor (props) {
+    super(props)
+    this.tabStyle = Object.assign({
+      opacity: props.active ? 1 : 0
     }, TAB_CONTENT_STYLE)
+  }
 
+  render () {
     return (
-      <div style={tabStyle}>
+      <div style={this.tabStyle}>
         {this.props.children}
       </div>
     )
   }
+}
+
+TabContent.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  active: React.PropTypes.bool
+}
+
+TabContent.defaultProps = {
+  active: false
 }
