@@ -6,7 +6,7 @@ const TAB_CONTENT_STYLE = {
   width: '100%'
 }
 
-export default class TabContent extends React.Component {
+export default class Tab extends React.Component {
   constructor (props) {
     super(props)
     this.tabStyle = Object.assign({
@@ -23,11 +23,11 @@ export default class TabContent extends React.Component {
   }
 }
 
-TabContent.propTypes = {
+Tab.propTypes = {
   title: React.PropTypes.string.isRequired,
   active: React.PropTypes.bool
 }
 
-TabContent.defaultProps = {
+Tab.defaultProps = {
   active: false
 }
